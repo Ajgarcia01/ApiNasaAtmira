@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <app-navbar></app-navbar>
+    <div class="hero">
+    <section class="banner-section">
+          <div class="banner-caption text-center">
+              <h2>Universe Planet</h2>
+              <h1>Discover the universe from the palm of your hand with our app Satisfy your curiosity about the cosmos anytime, anywhere!
+              </h1>
+          </div>
+  </section>
+    <section class="team-section section-pd">
+        <div class="container">
+            <div class="team-section-title">
+                <div class="all-section-title text-center">
+                    <h1 class="font-size-down">Gallery</h1>
+                </div>
+            </div>
+              <div class="content-wrapper">
+                <div *ngFor="let item of fruits" class="news-card">
+                  <a href="detail" class="news-card__card-link"></a>
+                  <img src="https://apod.nasa.gov/apod/image/2009/VenusClouds_Akatzuki_960.jpg" alt="" class="news-card__image">
+                  <div class="news-card__text-wrapper">
+                    <h5 class="news-card__title">Biomarker Phosphine Discovered in the Atmosphere of Venus</h5>
+                    <div class="news-card__post-name">More Info</div>
+                    <div class="news-card__details-wrapper">
+                      <p class="news-card__excerpt">2023-05-15</p>
+                      <a href="#" class="news-card__read-more">See the image<i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                  </div>
+                </div>              
+              </div>
+        </div>
+    </section>
+      </div>
+      <app-footer></app-footer>
+  </body>
+</html>

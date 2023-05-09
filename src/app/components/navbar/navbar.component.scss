@@ -1,0 +1,50 @@
+@import "../../../styles.scss";
+
+
+.btn.btn-outline-success {
+	background-color: $background-color_1 !important;
+	padding: 7px 20px 7px 20px !important;
+	color: $white !important;
+	border-radius: 5px;
+	border-style: none !important;
+	&:hover {
+		color: $white !important;
+	}
+}
+
+.navbar.navbar-expand-lg.navbar-light {
+	margin-top: 10px;
+}
+
+.header-section{
+    padding: 9px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    background-color: #fff;
+}
+.header-section a{
+    color: #010101;
+}
+.header-left{
+   margin-right: 10px;
+}
+
+.header-logo a img{
+    height: 50px;
+    float: left;
+    margin-right: 15px;
+}
+.header-logo a span{
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 5px;
+    display: inline-block;
+
+    transition: .4s;
+}
+.header-logo a span:hover{
+    color: $black;
+}
