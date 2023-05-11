@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ApodServiceService } from './apod-service.service';
+import { ApodService } from './apod.service';
 
-describe('ApodServiceService', () => {
-  let service: ApodServiceService;
+describe('ApodService', () => {
+  let service: ApodService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ApodServiceService);
+    service = TestBed.inject(ApodService);
   });
 
   it('should be created', () => {

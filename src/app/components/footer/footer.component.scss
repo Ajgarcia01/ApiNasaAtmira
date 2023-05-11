@@ -1,8 +1,12 @@
 @import "../../../styles.scss";
 
 .site-footer {
+	position: absolute;
+	width: 100%;
+	color: #333;
+
 	background-color: $background-color_3;
-	padding: 45px 0 30px;
+	padding: 1rem 0 1rem;
 	font-size: 15px;
 	line-height: 24px;
 	color: $gray;
@@ -13,11 +17,17 @@
 	hr.small {
 		margin: 20px 0;
 	}
-	h6 {
+	h1 {
 		color: $white;
-		font-size: 16px;
+		font-size: 2.3rem;
 		text-transform: uppercase;
-		margin-top: 5px;
+		letter-spacing: 2px;
+	}
+
+	h5 {
+		color: $white;
+		font-size: 1rem;
+		text-transform: uppercase;
 		letter-spacing: 2px;
 	}
 	a {
@@ -28,30 +38,5 @@
 		}
 	}
 }
-.footer-links {
-	padding-left: 0;
-	list-style: none;
-	li {
-		display: block;
-	}
-	a {
-		color: $gray;
-		&:active {
-			color: $white;
-			text-decoration: none;
-		}
-		&:focus {
-			color: $white;
-			text-decoration: none;
-		}
-		&:hover {
-			color: $white;
-			text-decoration: none;
-		}
-	}
-}
-.footer-links.inline {
-	li {
-		display: inline-block;
-	}
-}
+
+

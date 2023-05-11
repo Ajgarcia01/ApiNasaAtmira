@@ -10,6 +10,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { CardComponent } from './components/card/card.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { DownloadComponent } from './components/download/download.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     NavbarComponent,
     NotFoundPageComponent,
     CardComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    DownloadComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

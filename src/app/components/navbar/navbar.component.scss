@@ -1,50 +1,131 @@
-@import "../../../styles.scss";
 
-
-.btn.btn-outline-success {
-	background-color: $background-color_1 !important;
-	padding: 7px 20px 7px 20px !important;
-	color: $white !important;
-	border-radius: 5px;
-	border-style: none !important;
-	&:hover {
-		color: $white !important;
-	}
+.container
+{
+    margin:auto;
+    padding-left:15px;
+    padding-right:15px;
 }
 
-.navbar.navbar-expand-lg.navbar-light {
-	margin-top: 10px;
-}
 
-.header-section{
-    padding: 9px 0;
+/* Start Style NavBar  */
+
+nav
+{
+    width: 100%;
+    height: 50px;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    z-index: 99;
-    background-color: #fff;
-}
-.header-section a{
-    color: #010101;
-}
-.header-left{
-   margin-right: 10px;
+    z-index: 100;
 }
 
-.header-logo a img{
-    height: 50px;
-    float: left;
-    margin-right: 15px;
+ul 
+{
+    list-style: none;
+    margin-top: -10px;
 }
-.header-logo a span{
-    font-size: 25px;
-    font-weight: 500;
-    margin-top: 5px;
+
+li 
+{
     display: inline-block;
+    float:left;
+    padding: 5px;
+    font-size:18px;
+}
 
-    transition: .4s;
+a
+{
+    color:#797979;
+    text-decoration:none;
+    font-weight:bold;
 }
-.header-logo a span:hover{
-    color: $black;
+
+a:hover
+{
+    color:rgb(58, 58, 58);  
 }
+
+#logo
+{
+    margin: 7px 0 5px 5px;
+    font-family:sans-serif;
+    font-size: 15px;
+    cursor:pointer;
+    color:#7e7e7e;
+    float:left;
+    height:50px;
+    display:block;
+}
+
+
+#logo:hover
+{
+    text-decoration:none;
+    color:rgb(67, 67, 67);
+}
+
+#logo img{
+    width: 50px;
+    height: 40px;
+}
+
+.links
+{
+    float:right;
+    padding:18px;
+}
+
+.links i
+{
+    display:none;
+}
+
+#menu-icon
+{
+    display:hidden;
+    width:32px;
+    height:32px;
+}
+
+@media (max-width: 767px) 
+{
+.links i
+{
+        display:inline-block;
+}
+.links
+{
+    padding:20px 10px;
+}    
+    
+.links ul 
+{
+        
+    display:none;
+    position:absolute;
+    padding:20px;
+    background-color: #F0A202;
+    top:76px;
+    right:10px;
+    width:40%;
+
+        
+}
+    
+.links:hover ul
+{
+    display:block;
+        
+}
+    
+.links li    
+{
+    text-align:center;
+    width:100%;
+    padding:15px 0;
+    margin:0;
+}
+    
+}
+
+/* End Style NavBar  */
