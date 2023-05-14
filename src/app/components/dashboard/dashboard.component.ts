@@ -1,9 +1,10 @@
 import { Component, Output, EventEmitter  } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { tap, catchError, of } from 'rxjs';
+import { tap, catchError, of, Subscription } from 'rxjs';
 import { Apod } from 'src/app/interfaces/apod';
 import { ApodService } from 'src/app/services/apod/apod.service';
+import { ToastService } from 'src/app/services/toast/toast.service';
 
 
 @Component({
@@ -15,13 +16,16 @@ export class DashboardComponent {
   imgSrc:string="";
   items: Apod[]=[];
   imageUrl = 'https://ethic.es/wp-content/uploads/2023/03/imagen.jpg';
+  subscription: Subscription;
 
-  constructor(private _service:ApodService,private router:Router){
+
+  constructor(private _service:ApodService,private router:Router,private _toast:ToastService){
 
   }
  
   ngOnInit() {
     this.getData();
+    window.scrollTo(0, 0);
    
   }
 
@@ -31,15 +35,21 @@ export class DashboardComponent {
   }
 
   getData() {
-    this._service.getData().pipe(
-      tap(data => console.log(data)),
-      catchError(error => {
+    this.subscription = this._service.getData().subscribe(
+      data => {
+        this.items = data;
+      },
+      error => {
+        this._toast.showToast("Error in the get Data","Plase Keep Calm")
         console.error(error);
-        return of([]);
-      })
-    ).subscribe(data => {
-      this.items = data;
-    });
+      }
+    );
+  }
+
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
 }

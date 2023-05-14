@@ -1,11 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
     imports: [RouterTestingModule],
-    declarations: [AppComponent]
+    declarations: [AppComponent,NavbarComponent,FooterComponent]
   }));
 
   it('should create the app', () => {
@@ -14,16 +16,21 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'PruebaAngularAtmira'`, () => {
+  it(`should have as title 'Universe Planet'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('PruebaAngularAtmira');
+    expect(app.title).toEqual('Universe Planet');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('PruebaAngularAtmira app is running!');
+    const app = fixture.debugElement.componentInstance;
+
+    spyOn(app, 'changeText');
+
+    expect(app.text).toBe("Universe Planet")  
+    app.changeText();
+    expect(app.text).toBe("Universe Planet");
+    expect(app.changeText).toHaveBeenCalled();
   });
 });

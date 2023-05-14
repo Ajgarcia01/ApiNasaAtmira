@@ -4,12 +4,22 @@
   "newProjectRoot": "projects",
   "projects": {
     "PruebaAngularAtmira": {
+      "i18n": {
+        "sourceLocale": "en",
+        "locales": {
+          "es": {
+            "translation": "src/locale/messages.es.xlf",
+            "baseHref": "/es/"
+          }
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
+      
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -17,6 +27,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize":true,
+            "i18nMissingTranslation": "error",
             "outputPath": "dist/prueba-angular-atmira",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -27,10 +39,17 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
-            ],
+              "src/assets",
+              {
+                "glob": "*.xlf",
+                "input": "src/locale",
+                "output": "./locale/"
+              }
+            ]
+            ,
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css" 
             ],
             "scripts": []
           },
@@ -52,11 +71,18 @@
             },
             "development": {
               "buildOptimizer": false,
+              "localize": false,
               "optimization": false,
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "es": {
+              "localize": ["es"]
+            },
+            "en": {
+              "localize": ["en"]
             }
           },
           "defaultConfiguration": "production"
@@ -99,6 +125,7 @@
           }
         }
       }
+      
     }
   }
 }

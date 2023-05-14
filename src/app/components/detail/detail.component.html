@@ -8,28 +8,18 @@
 </head>
 <body>
   <app-spinner></app-spinner>
-
-  <div class="container">
-    <button (click)="regress()" class="back-button btn btn-dark"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-      <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-    </svg>  Regresar</button>
-    <div class="card">
-      <div class="card__header">
-        <img src="{{apod.hdurl}}" alt="card__image" class="card__image" width="600">
-      </div>
-      <div class="card__body">
-        <h4>{{apod.title}}</h4>
-        <p>{{apod.explanation}}</p>
-      </div>
-      <div class="card__footer">
-        <div class="user">
-          <img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/nasa_logo_icon_170926.png" alt="user__image" class="user__image">
-          <div class="user__info">
-            <h5>NASA</h5>
-            <small>{{apod.date}}</small>
-          </div>
+  <div class="body">
+    <div class="blog-post">
+      <img src="{{apod.hdurl}}" alt="Descripción de la imagen">
+      <br>
+      <div class="quockt">
+        <div>
+          <h2>{{apod.title}}</h2>
+          <p>{{apod.explanation}}</p>
+          <h4 align="right">-NASA</h4>
         </div>
       </div>
+      <app-back-button></app-back-button>
     </div>
   </div>
 </body>

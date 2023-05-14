@@ -1,13 +1,19 @@
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
 <nav>
         
   <div class="container">
+       <a href="dashboard" id="logo"><img src="../../../assets/logo_App.png" alt="">{{ 'Universe Planet' | translate}}</a>
       
-       <a href="dashboard" id="logo"><img src="https://www.pngmart.com/files/15/Floating-Astronaut-PNG-Picture.png" alt="">Universe Planet</a>
-      
-  <div class="links">
-      <a href="#"><i class="fas fa-bars fa-2x" style="margin-top: -10px;"></i></a>
+       <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <button (click)="switchLanguage('en')"  class="dropdown-item" type="button">Action</button>
+          <button  (click)="switchLanguage('es')" class="dropdown-item" type="button">Another action</button>
+        </div>
       </div>
-      
+
   </div>
       
   </nav>
