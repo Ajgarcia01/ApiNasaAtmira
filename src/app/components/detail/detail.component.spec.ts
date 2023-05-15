@@ -2,11 +2,13 @@ import { ComponentFixture, TestBed, getTestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { DetailComponent } from './detail.component';
 import { ApodService } from 'src/app/services/apod/apod.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { SpinnerComponent } from '../spinner/spinner.component';
 import { BackButtonComponent } from '../back-button/back-button.component';
 import { Apod } from '../../interfaces/apod';
 import { Injector } from '@angular/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 
 describe('DetailComponent', () => {
   let component: DetailComponent;
@@ -23,10 +25,24 @@ describe('DetailComponent', () => {
     title: 'Mock APOD title',
     url: 'http://mockurl.com',
   };
+
+  function createTranslateLoader(http: HttpClient) {
+    return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+  }
+
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [DetailComponent,SpinnerComponent,BackButtonComponent],
-      imports: [HttpClientTestingModule, HttpClientModule],
+      imports: [
+        HttpClientTestingModule,
+        HttpClientModule,
+        TranslateModule.forRoot(
+          {
+            loader: {
+              provide: TranslateLoader,
+              useFactory: (createTranslateLoader),
+              deps: [HttpClient]
+          }})],
       providers: [ApodService]
     });
     exampleService = jasmine.createSpyObj(['data$', 'getDataFromLocalStorage', 'saveData']);

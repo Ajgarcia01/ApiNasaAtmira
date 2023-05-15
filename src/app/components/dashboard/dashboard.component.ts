@@ -5,6 +5,7 @@ import { tap, catchError, of, Subscription } from 'rxjs';
 import { Apod } from 'src/app/interfaces/apod';
 import { ApodService } from 'src/app/services/apod/apod.service';
 import { ToastService } from 'src/app/services/toast/toast.service';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class DashboardComponent {
   subscription: Subscription;
 
 
-  constructor(private _service:ApodService,private router:Router,private _toast:ToastService){
+  constructor(private _service:ApodService,private router:Router,private _toast:ToastService,private translate: TranslateService){
 
   }
  
@@ -40,7 +41,7 @@ export class DashboardComponent {
         this.items = data;
       },
       error => {
-        this._toast.showToast("Error in the get Data","Plase Keep Calm")
+        this._toast.showToast("Error in the get Data","Please Keep Calm")
         console.error(error);
       }
     );
