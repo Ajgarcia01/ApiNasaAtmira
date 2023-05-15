@@ -30,12 +30,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              {
-                "glob": "*.xlf",
-                "input": "src/locale",
-                "output": "./locale/"
-              }
+              "src/assets"
             ]
             ,
             "styles": [
@@ -68,12 +63,6 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
-            },
-            "es": {
-              "localize": ["es"]
-            },
-            "en": {
-              "localize": ["en"]
             }
           },
           "defaultConfiguration": "production"
@@ -89,12 +78,6 @@
             }
           },
           "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "PruebaAngularAtmira:build"
-          }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
