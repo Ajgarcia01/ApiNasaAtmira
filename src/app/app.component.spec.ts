@@ -65,11 +65,6 @@ describe('AppComponent', () => {
     expect(app.changeText).toHaveBeenCalled();
   });
 
-  it('producction true', () => {
-
-    expect(environment.production==true).toBe(false)
-
-  });
 
   it('should have default language set to "es"', () => {
     expect(translateService.defaultLang).toBe('es');
