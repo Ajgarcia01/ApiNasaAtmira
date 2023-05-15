@@ -4,9 +4,6 @@
   "newProjectRoot": "projects",
   "projects": {
     "PruebaAngularAtmira": {
-      "i18n": {
-        "sourceLocale": "en"
-      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -77,9 +74,6 @@
             },
             "en": {
               "localize": ["en"]
-            },
-            "github-pages": {
-              "baseHref": "/AngularExamplesAndSnippets/"
             }
           },
           "defaultConfiguration": "production"
