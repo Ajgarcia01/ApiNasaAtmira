@@ -32,8 +32,6 @@
   <img src="https://aecconsultoras.com/wp-content/uploads/2020/01/logo-asociados-atmira-1024x527.jpg" width="180" height="100" text-align="center"/>
 </p>
   </a>
-![Uploading image.png…]()
-
   <h3 align="center">Nasa Apods Api Data</h3>
 
   <p align="center">
@@ -104,7 +102,6 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <div style="display: inline-block;">
   <a href="https://angular.io/" target="_blank">
     <img src="https://img.shields.io/badge/-Angular-DD0031?logo=angular&logoColor=white" alt="Angular" width="120px">
-    <img src="https://apod.nasa.gov/apod/image/2012/Ngc346_HubbleSchmidt_960.jpg" alt="Angular" width="120px">
   </a>
 </div>
 
