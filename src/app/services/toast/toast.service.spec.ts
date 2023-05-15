@@ -25,18 +25,6 @@ describe('ToastService', () => {
     expect(service).toBeTruthy();
   });
 
-  /*
-
-  it('should call ToastrService.error with the provided title and description', () => {
-    const title = 'Test title';
-    const description = 'Test description';
-
-    service.showToast(title, description);
-
-    expect(toastrServiceSpy.error).toHaveBeenCalledWith(title, description);
-  });
-  */
-
   it('should call toastr error method with the provided title and description', () => {
     const title = 'Error Title';
     const description = 'Error Description';
